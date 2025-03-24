@@ -41,7 +41,7 @@ console.log("O produto dos valores é:", produto);
 ```
 Qual das seguintes alternativas melhor descreve o que o código faz?
 
-A) O código avalia a expressão booleana, imprime `true`, calcula o produto dos números na lista e imprime o resultado no console.
+A) O código avalia a expressão booleana, imprime `true`, calcula o produto dos números na lista e imprime o resultado no console. [X]
 
 B) O código avalia a expressão booleana, imprime `false`, calcula o produto dos números na lista e imprime o resultado no console.
 
@@ -49,6 +49,7 @@ C) O código avalia a expressão booleana, imprime `true` e, em seguida, verific
 
 D) O código avalia a expressão booleana, imprime `false` e ordena os valores em ordem crescente.
 
+R: ao executar o código primeiramente verifica se o resto da divisão entre p e q é 1, depois se r x 2 é maior que p ou se q + r é menor que p, por fim o código imprime a multiplicação dos números no array valores, ex: 1 x 3 = 3 , 3 x 6 = 18, 18 x 9...
 
 ______
 
@@ -103,13 +104,16 @@ function analisarCredito2() {
 ```
 Se ambas as funções forem executadas com os valores fornecidos, qual será a saída exibida no console?
 
-A) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.'
+A) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.' [X]
 
 B) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -600.', enquanto analisarCredito2() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.'
 
 C) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.', enquanto analisarCredito2() exibirá: 'Seu crédito foi aprovado. Saldo disponível: 100.'
 
 D) Ambas as funções exibirão: 'Seu crédito foi aprovado Saldo disponível: 500.'
+
+R: Ambas as funções são tecnicamente a mesma , porém escritas de forma diferente. Enquanto a primeira você coloca um 'do' e um 'while' , que para o computador vai interpretar: faça ... enquanto ... Já a segunda não há um 'do' de forma explícita mas para o computador significará:
+enquanto (isso for verdadeiro) faça {isso} <--- 'do' de forma implícita
 ______
 
 **3)** Considere o seguinte trecho de código em JavaScript:
