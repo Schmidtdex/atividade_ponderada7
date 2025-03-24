@@ -133,11 +133,13 @@ Qual das seguintes alternativas melhor descreve o comportamento do código?
 
 A) O código verifica se a idade indica um adulto ou um idoso e exibe a mensagem correspondente.
 
-B) O código verifica se a idade pertence à faixa adulta. Se for, exibe "Você é um adulto!". Caso contrário, verifica se é menor de idade e exibe "Você é menor de idade!". Se nenhuma das condições anteriores for verdadeira, exibe "Você está na melhor idade!".
+B) O código verifica se a idade pertence à faixa adulta. Se for, exibe "Você é um adulto!". Caso contrário, verifica se é menor de idade e exibe "Você é menor de idade!". Se nenhuma das condições anteriores for verdadeira, exibe "Você está na melhor idade!". [X]
 
 C) O código verifica se a idade está entre 18 e 60 anos e, se for, imprime "Você é um adulto!". Se não estiver nesse intervalo, imprime "Você está na melhor idade!".
 
 D) O código verifica se a idade é menor de 18, entre 18 e 60 ou acima de 60, imprimindo uma mensagem específica para cada caso.
+
+R:  O código primeiramente verifica se a idade é maior ou igual a 18 e menor que 60 através de um operador booleano &&, caso a condição seja verdadeira o código imprime a mensagem "Você é um adulto!", caso contrário o código verifica se a idade é menor que 18 , caso for imprime uma mensagem, por fim se nenhuma condição for atendida imprime a mensagem final
 ______
 
 **4)** Qual será o resultado impresso no console após a execução do seguinte código?
@@ -196,7 +198,7 @@ Dispositivo 3 ligado. Energia restante: 400
 
 Dispositivo 4 não pode ser ligado. Energia insuficiente.
 
-D)
+D) [X]
 Dispositivo 1 ligado. Energia restante: 900
 
 Dispositivo 2 ligado. Energia restante: 300
@@ -206,6 +208,8 @@ Dispositivo 3 ligado com bateria extra. Energia restante: 200
 Dispositivo 4 não pode ser ligado. Energia insuficiente.
 
 Dispositivo 5 não pode ser ligado. Energia insuficiente.
+
+R: 
 
 ______
 
