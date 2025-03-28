@@ -49,7 +49,6 @@ C) O código avalia a expressão booleana, imprime `true` e, em seguida, verific
 
 D) O código avalia a expressão booleana, imprime `false` e ordena os valores em ordem crescente.
 
-R: ao executar o código primeiramente verifica se o resto da divisão entre p e q é 1, depois se r x 2 é maior que p ou se q + r é menor que p, por fim o código imprime a multiplicação dos números no array valores, ex: 1 x 3 = 3 , 3 x 6 = 18, 18 x 9...
 
 ______
 
@@ -139,7 +138,6 @@ C) O código verifica se a idade está entre 18 e 60 anos e, se for, imprime "Vo
 
 D) O código verifica se a idade é menor de 18, entre 18 e 60 ou acima de 60, imprimindo uma mensagem específica para cada caso.
 
-R:  O código primeiramente verifica se a idade é maior ou igual a 18 e menor que 60 através de um operador booleano &&, caso a condição seja verdadeira o código imprime a mensagem "Você é um adulto!", caso contrário o código verifica se a idade é menor que 18 , caso for imprime uma mensagem, por fim se nenhuma condição for atendida imprime a mensagem final
 ______
 
 **4)** Qual será o resultado impresso no console após a execução do seguinte código?
@@ -207,9 +205,7 @@ Dispositivo 3 ligado com bateria extra. Energia restante: 200
 
 Dispositivo 4 não pode ser ligado. Energia insuficiente.
 
-Dispositivo 5 não pode ser ligado. Energia insuficiente.
-
-R: 
+Dispositivo 5 não pode ser ligado. Energia insuficiente. 
 
 ______
 
@@ -219,7 +215,7 @@ Escolha a opção que melhor descreve seu propósito:
 
 A) O método update() é responsável por carregar os assets do jogo antes da cena ser exibida.
 
-B) O método update() é chamado continuamente a cada quadro (frame) do jogo, sendo usado para atualizar a lógica, movimentação e interações dos objetos na cena.
+B) O método update() é chamado continuamente a cada quadro (frame) do jogo, sendo usado para atualizar a lógica, movimentação e interações dos objetos na cena. [X]
 
 C) O método update() renderiza todos os sprites na tela e garante que a física do jogo seja processada corretamente.
 
@@ -230,7 +226,7 @@ ______
 
 Escolha a opção que responde corretamente:
 
-A) Simular física avançada, incluindo corpos rígidos, colisões complexas e interação entre objetos com gravidade e forças.
+A) Simular física avançada, incluindo corpos rígidos, colisões complexas e interação entre objetos com gravidade e forças. [X]
 
 B) Gerenciar eventos de entrada do usuário, como cliques e toques na tela, permitindo movimentação de personagens.
 
@@ -252,7 +248,17 @@ Pedidos entre R$50,00 e R$199,99 (inclusive) → "Frete com custo adicional!"
 
 Pedidos de R$200,00 ou mais → "Frete grátis!"
 ```
-Implemente um pseudocódigo que receba o valor total da compra e exiba a classificação correta do frete para o cliente.
+```javascript
+function classificaFrete(valorTotal) {
+    if (valorTotal < 50.00) {
+        return "Frete não disponível";
+    } else if (valorTotal >= 50.00 && valorTotal <= 199.99) {
+        return "Frete com custo adicional";
+    } else if (valorTotal >= 200.00) {
+        return "Frete grátis";
+    }
+}
+```
 ______
 
 **8)** Considere a implementação da classe base Veiculo em um sistema de modelagem de veículos. Sua tarefa é implementar, utilizando pseudocódigo, as classes derivadas Carro e Moto, que herdam da classe Veiculo, adicionando atributos específicos e métodos para calcular o consumo de combustível de um carro e de uma moto, respectivamente.
@@ -270,6 +276,42 @@ Método CalcularConsumo():
 ```
 Implementação genérica para cálculo de consumo, a ser sobrescrita pelas subclasses.
 Agora, implemente as classes Carro e Moto, garantindo que ambas herdem de Veiculo e possuam métodos específicos para calcular o consumo de combustível com base na quilometragem e eficiência do veículo.
+
+```javascript
+class Veiculo {
+    constructor(modelo,ano) {
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
+    calcularConsumo() {
+    }
+}
+
+class Carro extends Veiculo {
+    constructor(modelo,ano, eficiencia) {
+        super(modelo,ano);
+        this.eficiencia = eficiencia
+    }
+
+    calcularConsumo(quilometragem) {
+        const consumo = quilometragem / this.eficiencia
+        return `O carro ${this.modelo} consome ${consumo.toFixed(2)} litros para ${quilometragem} km `;
+    }
+}
+
+class Moto extends Veiculo {
+    constructor(modelo, ano, eficiencia) {
+        super(modelo, ano)
+        this.eficiencia = eficiencia
+    }
+
+    calcularConsumo(quilometragem) {
+        const consumo = quilometragem / this.eficiencia
+        return `A moto ${this.modelo} consome ${consumo.toFixed(2)} litros para ${quilometragem} km`
+    }
+}
+```
 ______
 
 **9)** Você é um cientista da NASA e está ajudando no desenvolvimento de um sistema de pouso para sondas espaciais em Marte. Seu objetivo é calcular o tempo necessário para que a sonda reduza sua velocidade até um nível seguro para pouso, considerando uma velocidade inicial de entrada na atmosfera marciana e uma taxa de desaceleração constante causada pelo atrito atmosférico e retrofoguetes.

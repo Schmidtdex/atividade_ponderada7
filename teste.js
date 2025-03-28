@@ -1,18 +1,33 @@
-var energiaDisponivel = 1200;
-var bateriaExtra = 400;
-var consumoDispositivos = [300, 600, 500, 200, 400];
+class Veiculo {
+    constructor(modelo,ano) {
+        this.modelo = modelo;
+        this.ano = ano;
+    }
 
-for (var i = 0; i < consumoDispositivos.length; i++) {
-    var consumo = consumoDispositivos[i];
+    calcularConsumo() {
+    }
+}
 
-    if (consumo <= energiaDisponivel) {
-        console.log("Dispositivo " + (i+1) + " ligado. Energia restante: " + (energiaDisponivel - consumo));
-        energiaDisponivel -= consumo;
-    } else if (consumo <= energiaDisponivel + bateriaExtra) {
-        console.log("Dispositivo " + (i+1) + " ligado com bateria extra. Energia restante: " + ((energiaDisponivel + bateriaExtra) - consumo));
-        energiaDisponivel = 0;
-        bateriaExtra -= (consumo - energiaDisponivel);
-    } else {
-        console.log("Dispositivo " + (i+1) + " não pode ser ligado. Energia insuficiente.");
+class Carro extends Veiculo {
+    constructor(modelo,ano, eficiencia) {
+        super(modelo,ano);
+        this.eficiencia = eficiencia
+    }
+
+    calcularConsumo(quilometragem) {
+        const consumo = quilometragem / this.eficiencia
+        return `O carro ${this.modelo} consome ${consumo.toFixed(2)} litros para ${quilometragem} km `;
+    }
+}
+
+class Moto extends Veiculo {
+    constructor(modelo, ano, eficiencia) {
+        super(modelo, ano)
+        this.eficiencia = eficiencia
+    }
+
+    calcularConsumo(quilometragem) {
+        const consumo = quilometragem / this.eficiencia
+        return `A moto ${this.modelo} consome ${consumo.toFixed(2)} litros para ${quilometragem} km`
     }
 }
