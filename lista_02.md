@@ -325,6 +325,26 @@ Considere a fórumla de atualização velocidade:
     velocidade = velocidadeInicial - desaceleracao * tempo
 ```
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
+
+```javascript
+function simulacaoDePouso(velocidadeInicial, velocidadeSegura, desacelaracao, tempoMax, desacelaracaoMin) {
+if (desacelaracao < desacelaracaoMin) {
+    return "Perigo: desacelaração menor que a desacelaração mínima"
+}
+
+const tempoNecessario = (velocidadeInicial - velocidadeSegura) / desacelaracao
+
+if (tempoNecessario > tempoMax) {
+    return `Erro: Tempo de descida (${tempoNecessario.toFixed(2)} s) excede o limite máximo de ${tempoMax} s`;
+}
+
+if (tempoNecessario < 0) {
+    return "Erro: Configuração inválida";
+}
+
+return `Pouso bem-sucedido! Tempo necessário: ${tempoNecessario.toFixed(2)} segundos. Velocidade final: ${velocidadeSegura} m/s.`;
+}
+```
 ______
 
 **10)** Em um sistema de análise financeira, as operações de investimento de uma empresa podem ser representadas por matrizes, onde cada linha representa um tipo de investimento e cada coluna representa um período de tempo.
@@ -357,3 +377,34 @@ Escrever("Total de investimentos acumulados:")
 ImprimirMatriz(totalInvestimentos)  
 ```
 Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), que multiplica as duas matrizes, simulando o efeito de diferentes fatores de crescimento e impacto financeiro nos investimentos ao longo do tempo.
+
+```javascript
+function multiplicarMatrizesInvestimento(matrizA, matrizB) {
+    const colunasA = matrizA[0].length;
+    const linhasB = matrizB.length;
+    if (colunasA !== linhasB) {
+        return "As matrizes não podem ser multiplicadas, já que o numero de colunas de A deve ser igual ao numero de linhas de B";
+    }
+
+    const linhasA = matrizA.length;
+    const colunasB = matrizB[0].length;
+    const matrizResultado = new Array(linhasA).fill(0).map(() => new Array(colunasB).fill(0));
+
+    for (let i = 0; i < linhasA; i++) {
+        for (let j = 0; j < colunasB; j++) {
+            let soma = 0;
+            for (let k = 0; k < colunasA; k++) {
+                soma += matrizA[i][k] * matrizB[k][j];
+            }
+            matrizResultado[i][j] = soma;
+        }
+    }
+
+    return matrizResultado;
+}
+
+function imprimirMatriz(matriz) {
+    matriz.forEach(linha => console.log(linha.join("\t")));
+}
+
+```

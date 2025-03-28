@@ -1,33 +1,17 @@
-class Veiculo {
-    constructor(modelo,ano) {
-        this.modelo = modelo;
-        this.ano = ano;
-    }
-
-    calcularConsumo() {
-    }
+function simulacaoDePouso(velocidadeInicial, velocidadeSegura, desacelaracao, tempoMax, desacelaracaoMin) {
+if (desacelaracao < desacelaracaoMin) {
+    return "Perigo: desacelaração menor que a desacelaração mínima"
 }
 
-class Carro extends Veiculo {
-    constructor(modelo,ano, eficiencia) {
-        super(modelo,ano);
-        this.eficiencia = eficiencia
-    }
+const tempoNecessario = (velocidadeInicial - velocidadeSegura) / desacelaracao
 
-    calcularConsumo(quilometragem) {
-        const consumo = quilometragem / this.eficiencia
-        return `O carro ${this.modelo} consome ${consumo.toFixed(2)} litros para ${quilometragem} km `;
-    }
+if (tempoNecessario > tempoMax) {
+    return `Erro: Tempo de descida (${tempoNecessario.toFixed(2)} s) excede o limite máximo de ${tempoMax} s`;
 }
 
-class Moto extends Veiculo {
-    constructor(modelo, ano, eficiencia) {
-        super(modelo, ano)
-        this.eficiencia = eficiencia
-    }
+if (tempoNecessario < 0) {
+    return "Erro: Configuração inválida";
+}
 
-    calcularConsumo(quilometragem) {
-        const consumo = quilometragem / this.eficiencia
-        return `A moto ${this.modelo} consome ${consumo.toFixed(2)} litros para ${quilometragem} km`
-    }
+return `Pouso bem-sucedido! Tempo necessário: ${tempoNecessario.toFixed(2)} segundos. Velocidade final: ${velocidadeSegura} m/s.`;
 }
